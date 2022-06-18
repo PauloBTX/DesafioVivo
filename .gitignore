@@ -1,0 +1,10 @@
+/Domain/bin
+/Domain/obj
+/Infra.Data/bin
+/Infra.Data/obj
+/Infra.IoC/obj
+/Infra.IoC/bin
+/Tests/obj
+/Tests/bin
+/Vivo/obj
+/Vivo/bin

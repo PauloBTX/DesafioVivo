@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  sqldb:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=desafioVivo123
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+  
+  vivo:
+    image: ${DOCKER_REGISTRY-}vivo
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DbServer: "host.docker.internal"
+      DbPort: "1433"
+      DbUser: "SA"
+      Password: "desafioVivo123"
+      Database: "DesafioVivo"
+    ports: 
+      - "8090:80"
